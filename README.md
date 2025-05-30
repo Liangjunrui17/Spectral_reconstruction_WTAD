@@ -1,0 +1,1 @@
+Based on the observed speckle pattern (I.mat) and the calibrated weighted transmission matrix (with adjustable weights for T1-T4), perform spectral reconstruction using the Tikhonov regularization + automatic differentiation method, where S_reference.mat is the reference spectrum.
