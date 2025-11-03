@@ -88,7 +88,7 @@ function [m_optimal,cv_mse] = Tikhonov(x,y)
     
     % Tikhonov regularization
     for i = 1:length(gamma)
-        m_tikhonov(:,i) = max(0,(x'*x + gamma(i)*eye(size(x,2))) \ x' * y);   % 矩阵A\B 等效：A（-1）*B
+        m_tikhonov(:,i) = max(0,(x'*x + gamma(i)*eye(size(x,2))) \ x' * y);   
     end 
     
     % Cross-validation to find optimal regularization parameter
@@ -121,4 +121,5 @@ function [m_optimal,cv_mse] = Tikhonov(x,y)
 
     % Optimal spectral vector with optimal regularization parameter
     m_optimal = m_tikhonov(:,min_cv_mse_index);
+
 end
